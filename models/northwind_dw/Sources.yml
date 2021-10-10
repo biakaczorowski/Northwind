@@ -1,0 +1,15 @@
+
+version: 2
+
+sources: 
+ - name: erpnorthwind20211010
+   tables:
+     - name: public_orders
+     - name: public_customers
+       description: Essa é a tabela de clientes
+       columns:
+        - name: customer_id
+          description: id do cliente
+          tests:
+           - unique
+           - not_null 
