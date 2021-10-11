@@ -5,11 +5,61 @@ sources:
  - name: erpnorthwind20211010
    tables:
      - name: public_orders
+       description: Essa é a tabela de ordens
+       columns:
+        - name: order_id
+          description: id da compra
+          tests:
+           - unique
+           - not_null 
      - name: public_customers
        description: Essa é a tabela de clientes
        columns:
         - name: customer_id
           description: id do cliente
+          tests:
+           - unique
+           - not_null
+     - name: public_employees
+       description: Essa é a tabela de empregados
+       columns:
+        - name: employee_id
+          description: id do empregado
+          tests:
+           - unique
+           - not_null 
+     - name: public_order_details
+       description: Essa é a tabela de detalhes das compras
+       columns:
+        - name: order_id
+          description: id da compra
+          tests:
+           - not_null 
+        - name: product_id
+          description: id do produto
+          tests:
+           - not_null 
+     - name: public_products
+       description: Essa é a tabela de produtos
+       columns:
+        - name: product_id
+          description: id do produto
+          tests:
+           - unique
+           - not_null 
+     - name: public_shippers
+       description: Essa é a tabela de entregadores
+       columns:
+        - name: shipper_id
+          description: id do entregador
+          tests:
+           - unique
+           - not_null 
+     - name: public_suppliers
+       description: Essa é a tabela de fornecedores
+       columns:
+        - name: supplier_id
+          description: id do fornecedor
           tests:
            - unique
            - not_null 
