@@ -57,7 +57,7 @@ with
     , orders_with_sk as (
         select
             orders.order_id
-            , customers.customer_sk as customers_fk
+            , customers.customer_sk as customer_fk
             , employees.employee_sk as employee_fk
             , shippers.shipper_sk as shipper_fk
             , orders.order_date --posso trocar a ordem das colunas alterando a ordem que elas são escritas aqui
@@ -88,7 +88,7 @@ with
     , final as (
         select
             order_details_with_sk.order_id
-            , orders_with_sk.customers_fk
+            , orders_with_sk.customer_fk
             , orders_with_sk.employee_fk
             , orders_with_sk.shipper_fk
             , orders_with_sk.order_date --posso trocar a ordem das colunas alterando a ordem que elas são escritas aqui
